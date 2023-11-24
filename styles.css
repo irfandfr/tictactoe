@@ -1,0 +1,252 @@
+@import url("https://fonts.googleapis.com/css2?family=Lilita+One&family=Roboto+Slab&display=swap");
+
+* {
+  box-sizing: border-box;
+}
+button{
+  cursor: pointer;
+}
+button:disabled{
+  cursor: default;
+}
+body {
+  font-family: "Roboto slab", serif;
+  color: #2B2B2B;
+  max-width: 100%;
+  min-height: 100%;
+  background: #efd28d;
+}
+
+main {
+  width: 100%;
+  display: flex;
+  flex-flow: column;
+  padding: 40px 20px;
+  justify-content: center;
+  align-items: center;
+}
+
+span{
+  font-family: inherit;
+}
+
+section {
+  width: 100%;
+  max-width: 900px;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+}
+.fade-animation{
+  opacity: 1;
+  transition: opacity 0.3s ease-out;
+}
+.fade-out{
+  opacity: 0;
+}
+
+.fade-in-animation{
+  opacity: 0;
+  transition: opacity 0.6s ease-in-out;
+}
+
+.fade-in{
+  opacity: 1;
+}
+
+.hide{
+  display: none!important;
+}
+
+.ui-btn{
+  display: inline-block;
+  outline: 0;
+  border: 0;
+  background-color: #4299e1;
+  border-radius: 4px;
+  padding: 8px 10px;
+  min-width: 30px;
+  font-size: 16px;
+  border-bottom: 4px solid #2b6cb0;
+  font-weight: 700;
+  color: white;
+  line-height: 10px;
+  transition: all 0.1s ease-in-out
+}
+
+.ui-btn.ui-btn--danger{
+  background: #e1341e;
+  border-bottom-color: #A30000;
+}
+
+.ui-btn.ui-btn--danger:active{
+  background: #C42732;
+  border-bottom-color: #80130E;
+}
+
+
+
+.ui-card{
+  margin-top: 100px;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  padding: 20px 24px;
+  max-width: 400px;
+  width: 100%;
+  display:flex;
+  flex-flow: column;
+  align-items: center;
+  border-radius: 8px;
+  background: #F1F9FB;
+}
+
+.ui-card.ui-card--game-mode{
+  width: max-content;
+  max-width: 1100px;
+  min-width: 400px;
+}
+
+.ui-btn:active{
+  background-color: #2b6cb0;
+  border-bottom-color: darkblue;
+  color: lightgray;
+  transform: translateY(2px);
+}
+
+.ui-card h1{
+  font-family: 'Lilita One', sans-serif;
+  font-size: 32px;
+  letter-spacing: 1px;
+  margin: 0;
+  margin-bottom: 20px;
+}
+
+.step1-ui h1 span{
+  font-family: "Lilita One", sans-serif;
+  font-size: 20px;
+  margin: 0;
+  margin-bottom: 10px;
+}
+
+.step1-ui h1 span:first-child{
+  color: #A30000;
+}
+.step1-ui h1 span:last-child{
+  color: #004777;
+}
+.ui-card h4{
+  font-size: 16px;
+  margin:0;
+  margin-bottom: 8px;
+}
+
+.action-container{
+  display: flex;
+  gap: 6px;
+  align-items: center;
+}
+
+.step1-ui__board-val{
+  font-family: "Lilita One", sans-serif;
+  font-size: 20px;
+  text-align: center;
+  width: 30px;
+}
+
+.step2-ui{
+  gap: 20px;
+}
+
+.var-container{
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  padding: 0 20px 8px 20px;
+  
+  border-bottom: dashed 4px lightgrey;
+}
+
+.step2-ui__move-val{
+  font-family: "Lilita One", sans-serif;
+  font-size: 20px;
+  text-align: center;
+  min-width: 30px;
+}
+
+.radio-container{
+  display: flex;
+  gap: 8px;
+}
+
+.radio-container label{
+  font-family: "Lilita One", sans-serif;
+  font-size: 20px;
+}
+
+.tButton {
+  font-family: "Lilita One", sans-serif;
+  font-size: 20px;
+  width: 100px;
+  height: 60px;
+  background: lightblue;
+  color: white;
+  border: none;
+  outline: none;
+  border-radius: 8px;
+  transition: all 0.15s ease-in-out;
+}
+
+.tButton.x{
+  color: #A30000;
+}
+
+.tButton.o{
+  color: #004777;
+}
+
+.tButton:hover {
+  background: #1ecbe1;
+}
+.tButton:active {
+  transform: translateY(2px);
+}
+
+.tButton:disabled {
+  background: lightgray;
+}
+
+.board {
+  display: flex;
+  gap: 4px;
+  flex-flow: column;
+  width: 100%
+}
+
+.board__row {
+  display: flex;
+  justify-content: center;
+  gap: 4px;
+  width: 100%;
+}
+
+.restart-btn {
+  outline: none;
+  font-size: 20px;
+  padding: 8px 16px;
+  border-radius: 10px;
+  background: #004777;
+  color: white;
+  display: none;
+  margin-top: 8px;
+}
+
+#result-ui{
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 100vw;
+  height: 100vh;
+  max-width: 100vw;
+  background: rgba(0,0,0,0.2);
+  padding-top: 100px;
+}

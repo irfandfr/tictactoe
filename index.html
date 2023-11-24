@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>TicTacToe!!</title>
+  <link rel="stylesheet" href="./styles.css">
+  <link rel="icon" href="./favicon.ico" type="image/x-icon">
+</head>
+
+<body>
+  <main>
+    <section id="starting-ui">
+      <div class="ui-card step1-ui">
+        <h1>TIC<span>x</span>TAC<span>o</span>TOE</h1>
+        <h4>Choose Board Size</h4>
+        <div class="action-container">
+          <button class="ui-btn" onClick="updateBoardSize('decrement')">-</button>
+          <span class="step1-ui__board-val" id="board-size-val"></span>
+          <button class="ui-btn" onClick="updateBoardSize('increment')">+</button>
+        </div>
+        <button class="ui-btn" style="margin-top: 20px" onClick="nextStep()">Next!</button>
+      </div>
+    </section>
+    <section id="config-step" class="hide">
+      <div class="ui-card step2-ui">
+        <div class="var-container">
+          <h4>Choose First Player</h4>
+          <div class="radio-container">
+            <input checked="checked" type="radio" id="player-x" name="first-player" value="X" onChange="updateFirstPlayer('X')">
+            <label for="html">X</label><br>
+            <input type="radio" id="player-o" name="first-player" value="O" onChange="updateFirstPlayer('O')">
+            <label for="css">O</label><br>
+          </div>
+        </div>
+        <div class="var-container hide" id="win-count-container">
+          <h4>Set Winning Condition</h4>
+          <div class="action-container">
+            <button class="ui-btn" onClick="updateWinCondition('decrement')">-</button>
+            <span class="step2-ui__move-val">
+              <output id="win-count-val">3</output>
+              in a row
+            </span>
+            <button class="ui-btn" onClick="updateWinCondition('increment')">+</button>
+          </div>
+        </div>
+        <div class="var-container hide" id="move-count-container">
+          <h4>Set Move Count</h4>
+          <div class="action-container">
+            <button class="ui-btn" onClick="updateMoveCount('decrement')">-</button>
+            <span class="step2-ui__move-val">
+              <output id="move-count-val">1</output>
+              moves/turn
+            </span>
+            <button class="ui-btn" onClick="updateMoveCount('increment')">+</button>
+          </div>
+        </div>
+        <div style="display: flex; gap: 12px;">
+          <button class="ui-btn ui-btn--danger" onClick="back()">
+            < Back</button>
+              <button class="ui-btn" onClick="playGame()">Play Game!</button>
+        </div>
+      </div>
+    </section>
+    <section id="game-ui" class="hide">
+      <div class="ui-card ui-card--game-mode">
+        <div id="game-board" class="board">
+        </div>
+        <h3 id="turn-board"></h3>
+        <div style="display: flex; gap: 20px;">
+          <h4 id="wincon-board"></h4>
+          <h4 id="move-board"></h4>
+        </div>
+      </div>
+    </section>
+    <section id="result-ui" class="hide">
+      <div class="ui-card step1-ui">
+        <h1><output id="result"></output></h1>
+        <h4>Play Again?<h4>
+            <div style="display: flex; gap: 12px;">
+              <button class="ui-btn ui-btn--danger" onClick="reset()">
+                Reset</button>
+              <button class="ui-btn" onClick="rematch()">Rematch!</button>
+            </div>
+      </div>
+    </section>
+  </main>
+  <script src="./script.js"></script>
+</body>
+
+</html>
